@@ -166,7 +166,7 @@ const fizzbuzz = (arr) => {
       if (element % 5 === 0) {
         NewArray[index] = 'Buzz';
       } else {
-        NewArray[index] = +element;
+        NewArray[index] = element;
       }
     }
   });
