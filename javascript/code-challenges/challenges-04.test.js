@@ -111,11 +111,12 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  // Solution code here...
+// Solution code here...
   return arr.sort((a, b) => {
-    return a.toLowerCase() === b.toLowerCase() ? 0 : a.toLowerCase() > b.toLowerCase() ? 1 : -1;
+    return a.toLowerCase() === b.toLowerCase() ? 0 : a.toLowerCase() > b.toLowerCase() ? 1 :- 1;
   });
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -183,29 +184,18 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
-  return arr.sort((a, b) => {
-    if (a.lastName < b.lastName) {
-      return -1;
-    }
-    if (a.lastName > b.lastName) {
-      return 1;
-    }
-    return 0;
-  }).sort((a,b)=>{
-    if(a.lastName === b.lastName){
-      arr.sort((a,b)=>{
-        if (a.firstName < b.firstName) {
-          return -1;
+  let sorted = sortPeople(arr);
+  sorted.forEach((el, index) => {
+    if (sorted[index + 1]) {
+      if (el.lastName === sorted[index + 1].lastName) {
+        sorted = sorted.sort((a, b) =>
+          lower(a.firstName).localeCompare(lower(b.firstName))
+        );
+        if (el.firstName === sorted[index + 1].firstName) {
+          sorted = sorted.sort((a, b) => a.age - b.age);
         }
-        if (a.firstName > b.firstName) {
-          return 1;
-        }
-        return 0;
-      });
-    }
-  });
-};
+      }}});
+  return sorted;};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 12 - Stretch Goal
@@ -229,8 +219,11 @@ const meetings = [
   new Meeting('Friday', '1200', '1345'),
 ];
 
+let list =['Monday','Tuesday','Wednesday','Friday']
 const sortMeetingsByDay = (arr) => {
   // Solution code here...
+  return arr.sort((a,b)=> list.indexOf(a.dayOfWeek)-list.indexOf(b.dayOfWeek));
+
 };
 
 /* ------------------------------------------------------------------------------------------------
