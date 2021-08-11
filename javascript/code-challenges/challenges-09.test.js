@@ -138,8 +138,16 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  return Object.values(arr).includes(character);
+  let filterd = arr.filter((element) => element.name === character);
+  let result = false;
+  filterd[0].children ? result = true : result = false;
+  return result;
 };
+
+
+// Object.values(arr.filter(ele => ele.children)).includes(character);
+
+
 
 
 /* ------------------------------------------------------------------------------------------------
