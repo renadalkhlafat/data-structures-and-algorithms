@@ -129,10 +129,10 @@ const alphabetizeBetter = (arr) => {
 };
 
 // Solution code here...
-  return arr.sort((a, b) => {
-    return a.toLowerCase() === b.toLowerCase() ? 0 : a.toLowerCase() > b.toLowerCase() ? 1 :- 1;
-  });
-};
+//   return arr.sort((a, b) => {
+//     return a.toLowerCase() === b.toLowerCase() ? 0 : a.toLowerCase() > b.toLowerCase() ? 1 :- 1;
+//   });
+// };
 
 
 
