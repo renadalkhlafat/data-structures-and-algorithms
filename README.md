@@ -19,3 +19,11 @@ To run your tests
 - run `npm test ##` to only run tests for challenge ## (i.e. 01)
 
 ### 401 Data Structures, Code Challenges
+
+
+|'#' |  Content |
+| ------------ | -------------|
+| 1  | [array reverse](./python/code_challenges/array-reverse/README.md)|
+| 1  | [array-insert-shift](./python/code_challenges/array-insert-shift/README.md)|
+| 1  | [array-binary-search](./python/code_challenges/array-binary-search/README.md)|
+
