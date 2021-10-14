@@ -1,5 +1,95 @@
-from linked_list.linked_list import LinkedList
+from linked_list.linked_list import Node,LinkedList
+
+import pytest
+
+def test_node_has_int_data():
+    # Arrange any data that you need to run your test
+    expected = 1
+
+    # Act on the subject of the test to produce some actual output
+    node = Node(1)
+    actual = node.data
+
+    # Assert
+    assert actual == expected
 
 
-def test_import():
-    assert LinkedList
+def test_node_has_str_data():
+    # Arrange any data that you need to run your test
+    expected = "a"
+
+    # Act on the subject of the test to produce some actual output
+    node = Node("a")
+    actual = node.data
+
+    # Assert
+    assert actual == expected
+
+
+def test_node_is_a_Node():
+    # Arrange any data that you need to run your test
+    expected = "Node"
+
+    # Act on the subject of the test to produce some actual output
+    node = Node(1)
+    actual = type(node).__name__
+
+    # Assert
+    assert actual == expected
+
+def test_node_without_value():
+  with pytest.raises(TypeError):
+    node = Node()
+
+def test_new_linked_list_is_empty():
+    #Arrange
+  expected = None
+    #Act
+  ll = LinkedList()
+  actual = ll.head
+    #Assert
+  assert actual == expected
+
+# @pytest.mark.skip('todo')
+def test_linked_list_insert():
+    # Arrange
+  expected = 1
+    # Act
+  ll = LinkedList()
+    # Assert
+  actual = ll.insert(2)
+
+def test_linked_contain():
+     # Arrange
+    expected = True
+    ll = LinkedList()
+    x= ll.insert(2)
+    # Act
+    actual = ll.__contains__(2)
+    #Assert
+    assert expected == actual
+
+def test_linked_not_contain():
+     # Arrange
+    expected = False
+    ll = LinkedList()
+    node1= ll.insert(2)
+    node2= ll.insert(0)
+    node3= ll.insert(6)
+    # Act
+    actual = ll.__contains__(1)
+    #Assert
+    assert expected == actual
+
+def test_to_string():
+    # Arrange
+    expected = "{ a } -> { b } -> { c } -> NULL"
+    ll = LinkedList()
+    # Act
+    node1= ll.insert("c")
+    node2= ll.insert("b")
+    node3= ll.insert("a")
+
+    actual= ll.to_string()
+    #Assert
+    assert actual == expected
