@@ -51,13 +51,22 @@ def test_new_linked_list_is_empty():
   assert actual == expected
 
 # @pytest.mark.skip('todo')
-def test_linked_list_insert():
+def test_linked_list_insert_one_node():
     # Arrange
   expected = 1
     # Act
   ll = LinkedList()
     # Assert
   actual = ll.insert(2)
+
+def test_linked_list_insert_multie_nodes():
+    # Arrange
+  expected = 3
+    # Act
+  ll = LinkedList()
+    # Assert
+  node1=ll.insert(1)
+  node2 = ll.insert(2)
 
 def test_linked_contain():
      # Arrange
