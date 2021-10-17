@@ -90,7 +90,7 @@ def test_linked_not_contain():
     #Assert
     assert expected == actual
 
-def test_to_string():
+def test__str__():
     # Arrange
     expected = "{ a } -> { b } -> { c } -> NULL"
     ll = LinkedList()
@@ -99,6 +99,6 @@ def test_to_string():
     node2= ll.insert("b")
     node3= ll.insert("a")
 
-    actual= ll.to_string()
+    actual= ll.__str__()
     #Assert
     assert actual == expected
