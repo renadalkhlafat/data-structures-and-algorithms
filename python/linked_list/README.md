@@ -14,8 +14,12 @@ I use classes to implement for linked list ,first class for Node that take the n
 | Insert | Adds a new `Node` to the `Linked List` | O(1) | O(1) | myList.Insert(99) |
 | Includes | Takes in a value and returns a boolean depending on if the value is in the `LinkedList` | O(n) | O(1) | myList.Includes(99) |
 | Print | Prints the `Linked List` to the console | O(n) | O(1) | myList.Print() |
+| append | Prints the `Linked List` to the console | O(n) | O(1) | myList.append(99) |
+| insert_befor |adds a new node with the given new value immediately before the first node that has the value specified | O(n) | O(1) | myList.insert_befor(99,5) |
+| insert_after | adds a new node with the given new value immediately after the first node that has the value specified | O(n) | O(1) | myList.insert_after(99,6) |
 
 
 ## Change Log
 
 1.1: *build and test linked list* - 14 OCt 2021
+1.2: *build and test linked list insertion methods* - 17 Oct 2021
