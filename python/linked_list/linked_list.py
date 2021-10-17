@@ -87,6 +87,14 @@ class LinkedList:
         return result
 
     def append (self,value):
+        """
+        to add a node to the end of the linked list
+
+        arguments:
+        value : any
+
+        returns: none
+        """
         node =Node(value)
         current = self.head
         if current :
@@ -96,5 +104,26 @@ class LinkedList:
         else:
             self.head=node
 
+    def insert_before(self ,newValue,valueToAddBefore):
+        """
+        adds a new node with the given new value immediately before the first node that has the value specified
+
+        arguments:
+        newValue : any
+        valueToAddBefore : any
+
+        returns: none
+
+        """
+
+        current =self.head
+        if not current:
+            return "Empty linked list"
+        while current.next:
+            if current.next.data == valueToAddBefore:
+                new_node =Node(newValue)
+                new_node.next = current.next
+                current.next=new_node
+        current=current.next
 
 
