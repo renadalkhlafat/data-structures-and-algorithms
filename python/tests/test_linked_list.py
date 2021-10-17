@@ -102,3 +102,24 @@ def test__str__():
     actual= ll.__str__()
     #Assert
     assert actual == expected
+
+def test_append_one():
+    # Arrange
+  expected = 1
+    # Act
+  ll = LinkedList()
+    # Assert
+  node1 = ll.insert(2)
+  node2 = ll.append(5)
+
+
+def test_append_multie_nodes():
+    # Arrange
+  expected = 3
+    # Act
+  ll = LinkedList()
+    # Assert
+  node1=ll.insert(1)
+  node2 = ll.append(5)
+  node3 = ll.append(6)
+
