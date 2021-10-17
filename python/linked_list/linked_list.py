@@ -126,4 +126,26 @@ class LinkedList:
                 current.next=new_node
         current=current.next
 
+    def insert_after(self ,newValue,valueToAddafter):
+        """
+        adds a new node with the given new value immediately after the first node that has the value specified
+
+        arguments:
+        newValue : any
+        valueToAddBefore : any
+
+        returns: if the linked list empty return 'Empty linked list' otherwise none
+
+        """
+
+        current =self.head
+        if not current.next:
+            return "This the linked list tile"
+        while current.next:
+            if current.data == valueToAddafter:
+                new_node =Node(newValue)
+                new_node.next = current.next
+                current.next=new_node
+        current=current.next
+
 

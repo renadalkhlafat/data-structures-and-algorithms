@@ -154,3 +154,27 @@ def test_insert_before_empty_list():
   actual= ll.__str__()
     #Assert
   assert actual == expected
+
+def test_insert_after_list_tile():
+    # Arrange
+  expected ="This the linked list tile"
+    # Act
+  ll = LinkedList()
+    # Assert
+  node1= ll.insert(5)
+  node2 = ll.insert(4)
+  actual= ll.insert_after(5,4)
+    #Assert
+  assert actual == expected
+
+def test_insert_after():
+    # Arrange
+  expected ="{ 5 } -> { 1 } -> { 3 } -> NULL"
+    # Act
+  ll = LinkedList()
+    # Assert
+  node1= ll.insert(5)
+  node2 = ll.insert(1)
+  actual= ll.insert_after(3,1)
+    #Assert
+  assert actual == expected
