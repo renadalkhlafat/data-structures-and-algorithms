@@ -150,6 +150,15 @@ class LinkedList:
 
 
     def kthFromEnd(self, k):
+        """
+        Return the node’s value that is `k` places from the tail of the linked list.
+
+        arguments:
+        K : any
+
+        returns: the value of the `k` places
+
+        """
         current = self.head
         length = 1
         while current.next:
