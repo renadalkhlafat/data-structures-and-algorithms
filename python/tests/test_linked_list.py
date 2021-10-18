@@ -243,4 +243,12 @@ def test_k_negative():
     #Assert
     assert excepted==actual
 
-
+def test_ll_size_1():
+     # Arrange
+    excepted=3
+     # Act
+    ll=LinkedList()
+    ll.insert(3)
+    actual=ll.kthFromEnd(0)
+    #Assert
+    assert excepted==actual
