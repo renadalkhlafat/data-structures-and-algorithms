@@ -169,8 +169,8 @@ class LinkedList:
             return "k must be non-negative number"
         elif k >= length:
             return 'Index out of range'
-        count = length-k-1
+        value = length-k-1
         for i in range(length):
-            if i == count:
+            if i == value:
                 return current.data
             current = current.next
