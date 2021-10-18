@@ -99,7 +99,7 @@ def test__str__():
     node2= ll.insert("b")
     node3= ll.insert("a")
 
-    actual= ll.__str__()
+    actual= str(ll)
     #Assert
     assert actual == expected
 
@@ -112,7 +112,7 @@ def test_append_one():
     node1 = ll.insert(2)
     node2 = ll.append(5)
 
-    actual= ll.__str__()
+    actual= str(ll)
     #Assert
     assert actual == expected
 
@@ -126,11 +126,24 @@ def test_append_multie_nodes():
   node1=ll.insert(1)
   node2 = ll.append(5)
   node3 = ll.append(6)
-  actual= ll.__str__()
+  actual= str(ll)
     #Assert
   assert actual == expected
 
 def test_insert_before_first_node():
+    # Arrange
+  expected ="{ 3 } -> { 5 } -> { 1 } -> NULL"
+    # Act
+  ll = LinkedList()
+    # Assert
+  node1=ll.insert(1)
+  node1=ll.insert(3)
+  node2 = ll.insert_before(5,1)
+  actual= str(ll)
+    #Assert
+  assert actual == expected
+
+def test_insert_before_middle_node():
     # Arrange
   expected ="{ 5 } -> { 1 } -> { 3 } -> NULL"
     # Act
@@ -138,8 +151,8 @@ def test_insert_before_first_node():
     # Assert
   node1=ll.insert(1)
   node1=ll.insert(3)
-  node2 = ll.insert_before(5,1)
-  actual= ll.__str__()
+  node2 = ll.insert_before(5,3)
+  actual= str(ll)
     #Assert
   assert actual == expected
 
@@ -151,7 +164,7 @@ def test_insert_before_empty_list():
     # Assert
 
   node2 = ll.insert_before(5,1)
-  actual= ll.__str__()
+  actual= str(ll)
     #Assert
   assert actual == expected
 
@@ -164,6 +177,19 @@ def test_insert_after_list_tile():
   node1= ll.insert(5)
   node2 = ll.insert(4)
   actual= ll.insert_after(5,4)
+    #Assert
+  assert actual == expected
+
+def test_insert_after_middle_node():
+    # Arrange
+  expected ="{ 5 } -> { 3 } -> { 1 } -> NULL"
+    # Act
+  ll = LinkedList()
+    # Assert
+  node1=ll.insert(1)
+  node1=ll.insert(3)
+  node2 = ll.insert_after(5,3)
+  actual= str(ll)
     #Assert
   assert actual == expected
 

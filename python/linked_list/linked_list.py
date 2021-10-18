@@ -118,7 +118,7 @@ class LinkedList:
 
         current =self.head
         if not current:
-            return "Empty linked list"
+            return "NULL"
         while current.next:
             if current.next.data == valueToAddBefore:
                 new_node =Node(newValue)
