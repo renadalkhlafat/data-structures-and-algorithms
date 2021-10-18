@@ -252,3 +252,16 @@ def test_ll_size_1():
     actual=ll.kthFromEnd(0)
     #Assert
     assert excepted==actual
+
+def test_happy_path():
+     # Arrange
+    excepted=2
+     # Act
+    ll=LinkedList()
+    ll.insert(3)
+    ll.insert(2)
+    ll.insert(7)
+    actual=ll.kthFromEnd(1)
+    #Assert
+    assert excepted==actual
+
