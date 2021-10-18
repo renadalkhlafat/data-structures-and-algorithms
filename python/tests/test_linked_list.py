@@ -229,3 +229,18 @@ def test_k_and_length_the_same():
     actual=ll.kthFromEnd(4)
     #Assert
     assert excepted==actual
+
+def test_k_negative():
+     # Arrange
+    excepted='k must be non-negative number'
+     # Act
+    ll=LinkedList()
+    ll.insert(3)
+    ll.insert(2)
+    ll.insert(2)
+    ll.append(13)
+    actual=ll.kthFromEnd(-4)
+    #Assert
+    assert excepted==actual
+
+
