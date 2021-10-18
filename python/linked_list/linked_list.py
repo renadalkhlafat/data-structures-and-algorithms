@@ -149,3 +149,19 @@ class LinkedList:
         current=current.next
 
 
+    def kthFromEnd(self, k):
+        current = self.head
+        length = 1
+        while current.next:
+            length += 1
+            current = current.next
+        current = self.head
+        if k < 0:
+            return "k must be non-negative number"
+        elif k >= length:
+            return 'Index out of range'
+        count = length-k-1
+        for i in range(length):
+            if i == count:
+                return current.data
+            current = current.next
