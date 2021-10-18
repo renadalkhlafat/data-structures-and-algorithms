@@ -213,7 +213,7 @@ def test_k_index_out_of_range():
     ll.insert(2)
     ll.insert(2)
     ll.append(13)
-    actual=ll.kthFromEnd(5)
+    actual=ll.kth_from_end(5)
     #Assert
     assert excepted==actual
 
@@ -226,7 +226,7 @@ def test_k_and_length_the_same():
     ll.insert(2)
     ll.insert(2)
     ll.append(13)
-    actual=ll.kthFromEnd(4)
+    actual=ll.kth_from_end(4)
     #Assert
     assert excepted==actual
 
@@ -239,7 +239,7 @@ def test_k_negative():
     ll.insert(2)
     ll.insert(2)
     ll.append(13)
-    actual=ll.kthFromEnd(-4)
+    actual=ll.kth_from_end(-4)
     #Assert
     assert excepted==actual
 
@@ -249,7 +249,7 @@ def test_ll_size_1():
      # Act
     ll=LinkedList()
     ll.insert(3)
-    actual=ll.kthFromEnd(0)
+    actual=ll.kth_from_end(0)
     #Assert
     assert excepted==actual
 
@@ -261,7 +261,7 @@ def test_happy_path():
     ll.insert(3)
     ll.insert(2)
     ll.insert(7)
-    actual=ll.kthFromEnd(1)
+    actual=ll.kth_from_end(1)
     #Assert
     assert excepted==actual
 
