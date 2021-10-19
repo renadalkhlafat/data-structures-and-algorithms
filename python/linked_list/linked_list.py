@@ -174,3 +174,28 @@ class LinkedList:
             if i == value:
                 return current.data
             current = current.next
+
+    def zipLists(list1, list2):
+        first_list = list1.head
+        second_list = list2.head
+
+        if not first_list and not second_list:
+            return 'There is no lists to zip'
+        elif not list1:
+            return str(list2)
+        elif not list2:
+            return str(list1)
+
+        hold_node = ''
+        while first_list and second_list:
+            if second_list:
+                hold_node = first_list.next
+                first_list.next = second_list
+                first_list = hold_node
+
+            if first_list:
+                hold_node = second_list.next
+                second_list.next = first_list
+                second_list = hold_node
+        return str(list1)
+
