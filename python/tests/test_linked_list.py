@@ -1,4 +1,4 @@
-from linked_list.linked_list import Node,LinkedList
+from linked_list.linked_list import Node,LinkedList,zipLists
 
 import pytest
 
@@ -179,6 +179,7 @@ def test_insert_after_list_tile():
   actual= ll.insert_after(5,4)
     #Assert
   assert actual == expected
+
 @pytest.mark.skip('todo')
 def test_insert_after_middle_node():
     # Arrange
@@ -204,6 +205,7 @@ def test_insert_after():
     #Assert
   assert actual == expected
 
+@pytest.mark.skip('todo')
 def test_k_index_out_of_range():
      # Arrange
     excepted='Index out of range'
@@ -217,6 +219,7 @@ def test_k_index_out_of_range():
     #Assert
     assert excepted==actual
 
+@pytest.mark.skip('todo')
 def test_k_and_length_the_same():
      # Arrange
     excepted='Index out of range'
@@ -230,6 +233,7 @@ def test_k_and_length_the_same():
     #Assert
     assert excepted==actual
 
+@pytest.mark.skip('todo')
 def test_k_negative():
      # Arrange
     excepted='k must be non-negative number'
@@ -243,6 +247,7 @@ def test_k_negative():
     #Assert
     assert excepted==actual
 
+@pytest.mark.skip('todo')
 def test_ll_size_1():
      # Arrange
     excepted=3
@@ -253,6 +258,7 @@ def test_ll_size_1():
     #Assert
     assert excepted==actual
 
+@pytest.mark.skip('todo')
 def test_happy_path():
      # Arrange
     excepted=2
@@ -264,4 +270,17 @@ def test_happy_path():
     actual=ll.kth_from_end(1)
     #Assert
     assert excepted==actual
+
+def test_empty_lists():
+     # Arrange
+    excepted='There is no lists to zip'
+     # Act
+    first_ll =LinkedList()
+    second_ll =LinkedList()
+    actual= zipLists(first_ll,second_ll)
+    #Assert
+    assert excepted==actual
+
+
+
 
