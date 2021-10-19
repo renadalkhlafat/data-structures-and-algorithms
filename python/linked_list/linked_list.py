@@ -177,6 +177,15 @@ class LinkedList:
 
 
 def zipLists(list1,list2):
+    """
+    Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list.
+
+    arguments:
+        K : any
+
+    returns: the value of the `k` places
+
+    """
     first_list = list1.head
     second_list = list2.head
 
