@@ -291,7 +291,6 @@ def test_first_list_empty():
     second_ll.insert(5)
     second_ll.append(3)
     second_ll.append(2)
-    print(str(second_ll))
     actual= zipLists(first_ll,second_ll)
     #Assert
     assert excepted==actual
@@ -305,11 +304,29 @@ def test_second_list_empty():
     first_ll.insert(5)
     first_ll.append(3)
     first_ll.append(2)
-    print(str(second_ll))
     actual= zipLists(first_ll,second_ll)
     #Assert
     assert excepted==actual
 
+def test_diff_list_length():
+     # Arrange
+    excepted="{ 0 } -> { 5 } -> { 1 } -> { 3 } -> { 7 } -> { 2 } -> { 4 } -> { 8 } -> { 9 } -> NULL"
+     # Act
+    first_ll =LinkedList()
+    first_ll.insert(1)
+    first_ll.append(7)
+    first_ll.append(4)
+    first_ll.insert(0)
+    first_ll.append(8)
+    first_ll.append(9)
+
+    second_ll =LinkedList()
+    second_ll.insert(5)
+    second_ll.append(3)
+    second_ll.append(2)
+    actual= zipLists(first_ll,second_ll)
+    #Assert
+    assert excepted==actual
 def test_happy_path():
      # Arrange
     excepted="{ 1 } -> { 5 } -> { 7 } -> { 3 } -> { 4 } -> { 2 } -> NULL"
