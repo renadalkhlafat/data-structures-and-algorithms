@@ -205,6 +205,9 @@ if __name__ =="__main__":
     first_ll.insert(1)
     first_ll.append(7)
     first_ll.append(4)
+    first_ll.insert(0)
+    first_ll.append(8)
+    first_ll.append(9)
 
     second_ll =LinkedList()
     second_ll.insert(5)
