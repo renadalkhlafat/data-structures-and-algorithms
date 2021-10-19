@@ -201,10 +201,14 @@ def zipLists(list1,list2):
     return str(list1)
 
 if __name__ =="__main__":
-    ll=LinkedList()
-    l2=LinkedList()
-    l2.insert(5)
-    l2.append(2)
-    l2.append(6)
-    print(zipLists(ll,l2))
+    first_ll =LinkedList()
+    first_ll.insert(1)
+    first_ll.append(7)
+    first_ll.append(4)
+
+    second_ll =LinkedList()
+    second_ll.insert(5)
+    second_ll.append(3)
+    second_ll.append(2)
+    print(zipLists(first_ll,second_ll))
 
