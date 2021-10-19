@@ -282,5 +282,20 @@ def test_empty_lists():
     assert excepted==actual
 
 
+def test_first_list_empty():
+     # Arrange
+    excepted="{ 5 } -> { 3 } -> { 2 } -> NULL"
+     # Act
+    first_ll =LinkedList()
+    second_ll =LinkedList()
+    second_ll.insert(5)
+    second_ll.append(3)
+    second_ll.append(2)
+    print(str(second_ll))
+    actual= zipLists(first_ll,second_ll)
+    #Assert
+    assert excepted==actual
+
+
 
 
