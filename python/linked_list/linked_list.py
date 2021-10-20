@@ -209,18 +209,52 @@ def zipLists(list1,list2):
             second_list = hold_node
     return str(list1)
 
+
+def reverse(linkedL):
+    prev = None
+    current = linkedL.head
+    while current :
+        next = current.next
+        current.next = prev
+        prev = current
+        current = next
+    linkedL.head = prev
+    return str(linkedL)
+
+
+def ispalindrome(linkedL):
+    temp = linkedL.head
+
+    arr = []
+
+    isPalin = True
+
+    while temp:
+        arr.append(temp.data)
+
+        temp=temp.next
+
+    temp = linkedL.head
+    while temp :
+        x = arr.pop()
+
+        if temp.data == x:
+            isPalin = True
+        else :
+            isPalin = False
+            break
+        temp = temp.next
+
+    return isPalin
+
+
 if __name__ =="__main__":
     first_ll =LinkedList()
     first_ll.insert(1)
-    first_ll.append(7)
+    first_ll.append(3)
     first_ll.append(4)
-    first_ll.insert(0)
-    first_ll.append(8)
-    first_ll.append(9)
+    first_ll.append(7)
+    first_ll.append(1)
 
-    second_ll =LinkedList()
-    second_ll.insert(5)
-    second_ll.append(3)
-    second_ll.append(2)
-    print(zipLists(first_ll,second_ll))
-
+    print(first_ll)
+    print(ispalindrome(first_ll))

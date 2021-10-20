@@ -1,4 +1,4 @@
-from linked_list.linked_list import Node,LinkedList,zipLists
+from linked_list.linked_list import Node,LinkedList,zipLists,reverse,ispalindrome
 
 import pytest
 
@@ -345,4 +345,48 @@ def test_happy_path():
     #Assert
     assert excepted==actual
 
+@pytest.mark.skip('todo')
+def test_reverse():
+     # Arrange
+    excepted="{ 4 } -> { 4 } -> { 4 } -> { 7 } -> { 1 } -> NULL"
+     # Act
+    first_ll =LinkedList()
+    first_ll.insert(1)
+    first_ll.append(7)
+    first_ll.append(4)
+    first_ll.append(4)
+    first_ll.append(4)
 
+    actual= reverse(first_ll)
+    #Assert
+    assert excepted==actual
+
+def test_ispalindrome():
+     # Arrange
+    excepted=True
+     # Act
+    first_ll =LinkedList()
+    first_ll.insert(1)
+    first_ll.append(7)
+    first_ll.append(4)
+    first_ll.append(7)
+    first_ll.append(1)
+
+    actual= ispalindrome(first_ll)
+    #Assert
+    assert excepted==actual
+
+def test_not_ispalindrome():
+     # Arrange
+    excepted=False
+     # Act
+    first_ll =LinkedList()
+    first_ll.insert(1)
+    first_ll.append(3)
+    first_ll.append(4)
+    first_ll.append(6)
+    first_ll.append(1)
+
+    actual= ispalindrome(first_ll)
+    #Assert
+    assert excepted==actual
