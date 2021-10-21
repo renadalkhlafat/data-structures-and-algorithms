@@ -11,6 +11,10 @@ def test_empty_stack():
     stack = Stack()
     assert stack.is_empty() == True
 
+def test_instantiate_empty_stack():
+    stack = Stack()
+    assert stack.is_empty() == True
+
 
 def test_not_empty_stack(stack):
     assert stack.is_empty() == False
