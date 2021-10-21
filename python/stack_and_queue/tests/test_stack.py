@@ -13,6 +13,11 @@ def test_push_to_stack(stack):
     actual = stack.top.value
     assert expected == actual
 
+def test_pop_from_stack(stack):
+    expected = 7
+    actual = stack.pop()
+    assert expected == actual
+
 @pytest.fixture
 def stack():
     stack=Stack()
