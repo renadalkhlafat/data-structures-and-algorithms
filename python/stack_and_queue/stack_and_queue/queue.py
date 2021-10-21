@@ -28,10 +28,10 @@ class Queue:
        self.front = None
        self.rear = None
 
-    def push(self ,value):
+    def enqueue(self ,value):
         pass
 
-    def pop(self):
+    def dequeue(self):
         pass
 
     def peek(self):

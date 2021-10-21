@@ -19,7 +19,6 @@ def test_instantiate_empty_stack():
 def test_not_empty_stack(stack):
     assert stack.is_empty() == False
 
-
 # @pytest.mark.skip('todo')
 def test_push_to_stack(stack):
     expected = 7
