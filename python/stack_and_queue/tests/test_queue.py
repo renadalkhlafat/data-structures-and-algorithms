@@ -39,7 +39,10 @@ def test_peek_from_empty_queue():
         queue = Queue()
         actual = queue.peek()
 
-
+def test_peek_from_empty_queue():
+    with pytest.raises(Exception):
+        queue = Queue()
+        actual = queue.dequeue()
 
 
 
