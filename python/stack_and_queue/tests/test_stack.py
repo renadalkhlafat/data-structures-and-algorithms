@@ -8,7 +8,11 @@ def test_version():
 def test_empty_stack(stack):
     assert stack.is_empty()
 
-    
+def test_push_to_stack(stack):
+    expected = 7
+    actual = stack.top.value
+    assert expected == actual
+
 @pytest.fixture
 def stack():
     stack=Stack()
