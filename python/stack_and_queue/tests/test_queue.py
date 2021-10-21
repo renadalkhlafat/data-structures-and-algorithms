@@ -8,7 +8,10 @@ def test_enqueues_into_queue():
     actual = queue.rear.data
     assert expected == actual
 
-
+def test_multiple_enqueues_into_queue(queue):
+    expected = 8
+    actual = queue.rear.data
+    assert expected == actual
 
 
 
