@@ -28,10 +28,11 @@ def test_peek_from_queue_after_multiple_dequeues(queue):
     node2= queue.dequeue()
     node3= queue.dequeue()
     node4= queue.dequeue()
-
     assert queue.is_empty() == True
 
-
+def test_instantiate_an_empty_queue():
+    queue = Queue()
+    assert queue.front and queue.rear == None
 
 @pytest.fixture
 def queue():
