@@ -28,6 +28,11 @@ def test_peek_from_not_empty_stack(stack):
     actual = stack.peek()
     assert expected == actual
 
+def test_peek_from_empty_stack():
+    with pytest.raises(Exception):
+        stack=Stack()
+        stack.peek()
+
 @pytest.fixture
 def stack():
     stack=Stack()
