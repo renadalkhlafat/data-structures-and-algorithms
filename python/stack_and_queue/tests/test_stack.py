@@ -36,7 +36,6 @@ def test_pop_from_not_empty_stack(stack):
     assert expected == actual
 
 def test_pop_all_nodes_from_not_empty_stack(stack):
-
     node1 = stack.pop()
     node2 = stack.pop()
     node3 = stack.pop()
@@ -53,6 +52,12 @@ def test_pop_from_empty_stack():
 # @pytest.mark.skip('todo')
 def test_peek_from_not_empty_stack(stack):
     expected = 7
+    actual = stack.peek()
+    assert expected == actual
+
+def test_peek_net_value_from_not_empty_stack(stack):
+    expected = 5
+    node = stack.pop()
     actual = stack.peek()
     assert expected == actual
 
