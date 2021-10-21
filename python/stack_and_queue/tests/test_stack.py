@@ -5,8 +5,12 @@ import pytest
 def test_version():
     assert __version__ == '0.1.0'
 
+def test_empty_stack():
+    stack = Stack()
+    assert stack.is_empty() == True
+
 def test_empty_stack(stack):
-    assert stack.is_empty()
+    assert stack.is_empty() == False
 
 def test_push_to_stack(stack):
     expected = 7
