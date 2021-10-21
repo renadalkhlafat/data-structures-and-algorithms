@@ -15,7 +15,7 @@ def test_multiple_enqueues_into_queue(queue):
 
 def test_dequeue_from_queue(queue):
     expected = 2
-    actual = queue.front.data
+    actual = queue.dequeue()
     assert expected == actual
 
 def test_peek_from_queue(queue):
@@ -23,6 +23,13 @@ def test_peek_from_queue(queue):
     actual = queue.peek()
     assert expected == actual
 
+def test_peek_from_queue_after_multiple_dequeues(queue):
+    node1= queue.dequeue()
+    node2= queue.dequeue()
+    node3= queue.dequeue()
+    node4= queue.dequeue()
+
+    assert queue.is_empty() == True
 
 
 
