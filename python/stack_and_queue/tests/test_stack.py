@@ -23,6 +23,11 @@ def test_pop_from_empty_stack():
         stack=Stack()
         stack.pop()
 
+def test_peek_from_not_empty_stack(stack):
+    expected = 7
+    actual = stack.peek()
+    assert expected == actual
+
 @pytest.fixture
 def stack():
     stack=Stack()
