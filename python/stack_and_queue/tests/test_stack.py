@@ -35,6 +35,13 @@ def test_pop_from_not_empty_stack(stack):
     actual = stack.pop()
     assert expected == actual
 
+def test_pop_all_nodes_from_not_empty_stack(stack):
+
+    node1 = stack.pop()
+    node2 = stack.pop()
+    node3 = stack.pop()
+    node4 = stack.pop()
+    assert stack.is_empty() == True
 
 # @pytest.mark.skip('todo')
 def test_pop_from_empty_stack():
