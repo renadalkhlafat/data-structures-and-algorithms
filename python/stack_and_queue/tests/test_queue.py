@@ -13,6 +13,11 @@ def test_multiple_enqueues_into_queue(queue):
     actual = queue.rear.data
     assert expected == actual
 
+def test_dequeue_from_queue(queue):
+    expected = 2
+    actual = queue.front.data
+    assert expected == actual
+
 
 
 
