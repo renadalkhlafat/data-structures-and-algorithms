@@ -1,3 +1,5 @@
+from _pytest.recwarn import T
+from stack_and_queue.node import Node
 class Stack:
     """
     class will implement the Stack data structure
@@ -27,13 +29,26 @@ class Stack:
        self.top = None
 
     def push(self ,value):
-        pass
+        node=Node(value)
+        node.next = self.top
+        self.top = node
 
     def pop(self):
-        pass
+        if not self.top :
+            raise Exception("You can't pop from Empty Stack !!!")
+        else :
+           temp = self.top
+           self.top = self.top.next
+           temp.next = None
+        return temp.data
 
     def peek(self):
-        pass
+        if not self.top :
+            raise Exception("Empty Stack !!!")
+        else :
+            return self.top.data
 
     def is_empty(self):
-        pass
+        if not self.top:
+            return True
+        return False
