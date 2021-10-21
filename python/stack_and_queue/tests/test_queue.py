@@ -32,7 +32,7 @@ def test_peek_from_queue_after_multiple_dequeues(queue):
 
 def test_instantiate_an_empty_queue():
     queue = Queue()
-    assert queue.front and queue.rear == None
+    assert queue.front == None
 
 def test_peek_from_empty_queue():
     with pytest.raises(Exception):

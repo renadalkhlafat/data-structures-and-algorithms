@@ -1,3 +1,4 @@
+from stack_and_queue.node import Node
 class Queue:
     """
     class will implement the Queue data structure
@@ -29,13 +30,31 @@ class Queue:
        self.rear = None
 
     def enqueue(self ,value):
-        pass
+        node = Node(value)
+        if not self.rear:
+           self.front = node
+           self.rear= node
+        else :
+            self.rear.next = node
+            self.rear = node
 
     def dequeue(self):
-        pass
+        if not self.front :
+            raise Exception("You can't dequeue from empty Queue !!!")
+        else :
+            temp = self.front
+            self.front = self.front.next
+            temp.next = None
+
+        return temp.data
 
     def peek(self):
-        pass
+        if not self.front :
+            raise Exception("Empty Queue !!!")
+        else :
+            return self.front.data
 
     def is_empty(self):
-        pass
+        if not self.front:
+            return True
+        return False
