@@ -34,6 +34,16 @@ def test_instantiate_an_empty_queue():
     queue = Queue()
     assert queue.front and queue.rear == None
 
+def test_peek_from_empty_queue():
+    with pytest.raises(Exception):
+        queue = Queue()
+        actual = queue.peek()
+
+
+
+
+
+
 @pytest.fixture
 def queue():
     queue = Queue()
