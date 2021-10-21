@@ -18,6 +18,11 @@ def test_dequeue_from_queue(queue):
     actual = queue.front.data
     assert expected == actual
 
+def test_peek_from_queue(queue):
+    expected = 2
+    actual = queue.peek()
+    assert expected == actual
+
 
 
 
