@@ -48,16 +48,24 @@ class PseudoQueue:
 
 
     def __str__(self):
-        return "queue"
+        result=''
+        current = self.stack1.top
+        while current:
+            result += "{ " + str(current.data)+ " } -> "
+            current=current.next
+        result+=" Null"
+        return  result
 
-# q=PseudoQueue()
-# q.enqueue(5)
-# q.enqueue(3)
-# q.enqueue(2)
+q=PseudoQueue()
+q.enqueue(5)
+q.enqueue(3)
+q.enqueue(2)
 
+print(str(q))
 # print(q.rear)
-# q.dequeue()
+q.dequeue()
 # q.dequeue()
 # q.dequeue()
 # q.dequeue()
 # print(q.front)
+print(str(q))
