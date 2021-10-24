@@ -6,17 +6,19 @@ def test_enqueue():
     expected = 5
     pesudo_queue = PseudoQueue()
     pesudo_queue.enqueue(5)
-    actual = pesudo_queue.rear.data
+    actual = pesudo_queue.rear
     assert expected == actual
 
+
+# @pytest.mark.skip('todo')
 def test_multiple_enqueues(pesudo_queue):
-    expected = 3
-    actual = pesudo_queue.rear.data
+    expected = 8
+    actual = pesudo_queue.rear
     assert expected == actual
 
 
 @pytest.fixture
-def queue():
+def pesudo_queue():
     pesudo_queue =PseudoQueue()
     pesudo_queue.enqueue(3)
     pesudo_queue.enqueue(6)

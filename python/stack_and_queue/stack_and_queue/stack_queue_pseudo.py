@@ -1,5 +1,5 @@
-from  stack_and_queue.node import Node
 from stack_and_queue.stack import Stack
+
 
 class PseudoQueue:
     """
@@ -20,14 +20,25 @@ class PseudoQueue:
         return -> the queue
 
     """
-    def __init__(self):
-        pass
 
-    def enqueue(self ,value):
-        pass
+    def __init__(self):
+        self.front = None
+        self.rear = None
+        self.stack1 = Stack()
+        self.stack2 = Stack()
+
+    def enqueue(self, value):
+        self.stack1.push(value)
+        self.rear= self.stack1.top.data
 
     def dequeue(self):
         pass
 
     def __str__(self):
         return "queue"
+
+# q=PseudoQueue()
+# q.enqueue(5)
+# q.enqueue(3)
+# q.enqueue(2)
+# print(q.rear)

@@ -1,4 +1,3 @@
-from _pytest.recwarn import T
 from stack_and_queue.node import Node
 class Stack:
     """
