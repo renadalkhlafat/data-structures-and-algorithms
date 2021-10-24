@@ -51,7 +51,7 @@ class PseudoQueue:
         result=''
         current = self.stack1.top
         while current:
-            result += "{ " + str(current.data)+ " } -> "
+            result += "[ " + str(current.data)+ " ] -> "
             current=current.next
         result+=" Null"
         return  result

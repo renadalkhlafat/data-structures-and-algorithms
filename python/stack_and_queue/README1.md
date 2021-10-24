@@ -2,10 +2,10 @@
 Implememnt the Queue staff using our stack implementation
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
+![stack_queue_pesudo](stack_and_queue_pesudo.png)
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+I use class to implement the pesudoQueue ,for the enqueue I push the value to the stack and in the dequeue I pop the values from the first stack to the second one ,then I pop the value from the second stack and stored it into variable ,then I returned the value again to first stack
 
 ## Solution
-<!-- Show how to run your code, and examples of it in action -->
+Navegate to `python/code_challenge/stack_and_queue` then open the termenal and run `poetry shell` the pytest the `stack_and_queue_pesudo`
