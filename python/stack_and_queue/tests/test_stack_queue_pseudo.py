@@ -16,6 +16,12 @@ def test_multiple_enqueues(pesudo_queue):
     actual = pesudo_queue.rear
     assert expected == actual
 
+def test_dequeue(pesudo_queue):
+    expected = 8
+    pesudo_queue.dequeue()
+    actual = pesudo_queue.rear
+    assert expected == actual
+
 
 @pytest.fixture
 def pesudo_queue():
