@@ -23,17 +23,17 @@ class AnimalShelter:
         self.dog = Queue()
 
     def enqueue_animal(self,animal):
-        if animal.lower() == "cat":
+        if animal.lower().startswith("cat") :
             self.cat.enqueue(animal)
-        elif animal.lower() == "dog" :
+        elif animal.lower().startswith("dog") :
             self.dog.enqueue(animal)
         else:
            raise Exception('This shelter for cats and dogs only !!!')
 
     def dequeue_animal(self,pref):
-        if pref.lower() == "cat":
+        if pref.lower().startswith("cat"):
             return self.cat.dequeue()
-        elif pref.lower() == "dog":
+        elif pref.lower().startswith("dog"):
             return self.dog.dequeue()
         else :
             return "NULL"
