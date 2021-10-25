@@ -8,3 +8,10 @@ def test_enqueue_cat():
 
     assert expected == actual
 
+def test_enqueues_dog():
+    expected = "dog"
+    animal_shelter=AnimalShelter()
+    animal_shelter.enqueue_animal("dog")
+    actual = animal_shelter.dog.rear.data
+
+    assert expected == actual
