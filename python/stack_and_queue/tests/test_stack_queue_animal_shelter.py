@@ -15,3 +15,13 @@ def test_enqueues_dog():
     actual = animal_shelter.dog.rear.data
 
     assert expected == actual
+
+def test_dequeues_dog():
+    expected = "dog"
+    animal_shelter=AnimalShelter()
+    animal_shelter.enqueue_animal("dog")
+    animal_shelter.enqueue_animal("dog")
+    animal_shelter.dequeue_animal("dog")
+    actual = animal_shelter.dog.rear.data
+
+    assert expected == actual
