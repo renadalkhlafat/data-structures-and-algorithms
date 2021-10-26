@@ -24,11 +24,11 @@ def validate_brackets(input):
     else:
         return False
 
-# print(validate_brackets("{}"))
-# print(validate_brackets("{}(){}"))
-# print(validate_brackets("()[[Extra Characters]]"))
-# print(validate_brackets("(){}[[]]"))
-# print(validate_brackets("{}{Code}[Fellows](())"))
-# print(validate_brackets("[({}]"))
-# print(validate_brackets("(]("))
-# print(validate_brackets("{(})"))
+# print(validate_brackets("{}")) # True
+# print(validate_brackets("{}(){}"))  # True
+# print(validate_brackets("()[[Extra Characters]]"))  # True
+# print(validate_brackets("(){}[[]]"))  # True
+# print(validate_brackets("{}{Code}[Fellows](())"))  # True
+# print(validate_brackets("[({}]"))  # False
+# print(validate_brackets("(](")) # False
+# print(validate_brackets("{(})")) # False
