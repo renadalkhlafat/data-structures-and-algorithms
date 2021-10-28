@@ -117,3 +117,18 @@ def test_in_order():
     # assert actual is same as expected
     assert actual == expected
     print("test_in_order_ passed")
+
+# ******************** binary search tree tests **********************
+def test_add_once():
+     # Arrange
+    # Create tree instance
+    tree = BinarySearchTree()
+    # add "A" to the tree
+    tree.add('A')
+    # set expected list
+    expected = "A"
+    # set actual to the tree root value
+    actual = tree.root.data
+    # assert actual is same as expected
+    assert actual == expected
+""
