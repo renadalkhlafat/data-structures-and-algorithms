@@ -133,16 +133,34 @@ def test_add_once():
     assert actual == expected
 
 def test_add_twice():
-     # Arrange
+    # Arrange
     # Create tree instance
     tree = BinarySearchTree()
     # add "A" to the tree
     tree.add("A")
-    tree.add("b")
+    tree.add("B")
     # set expected list
     expected = ["A","B"]
     # set actual to the tree root value
     actual = [tree.root.data , tree.root.left.data]
     # assert actual is same as expected
     assert actual == expected
+
+def test_contains_value():
+    # Arrange
+    # Create tree instance
+    tree = BinarySearchTree()
+    # add "A" to the tree
+    tree.add("A")
+    tree.add("B")
+    tree.add("C")
+    # set expected list
+    expected = True
+    # set actual to the tree root value
+    actual = tree.__contains__("C")
+    # assert actual is same as expected
+    assert actual == expected
+
+def test_not_contains_value():
+    pass
 ""
