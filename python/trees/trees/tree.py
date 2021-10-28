@@ -55,7 +55,7 @@ class BinaryTree:
 
   def pre_order(self):
     """
-    A binary tree method which returns a list of items that it contains
+    A binary tree method which returns a list of items that it contains in pre_order
 
     input: None
 
@@ -77,7 +77,11 @@ class BinaryTree:
 
   def in_order(self):
     """
-    function to in order the list using Trees
+    function to trivarsal tree in in_order
+
+    input : None
+
+    output : tree items
     """
     list_of_items = []
     def walk(node):
@@ -110,3 +114,34 @@ class BinaryTree:
 
     walk(self.root)
     return list_of_items
+
+class BinarySearchTree(BinaryTree):
+    """
+    class to hold adding and searching staff
+
+    methods :
+        - add()
+        - contains()
+    """
+    def __init__(self):
+        super().__init__()
+
+    def add(self,value):
+        """
+        add nodes to binary tree
+
+        input : value
+
+        output : None
+        """
+        pass
+
+    def __contains__(self,value):
+        """
+        search for a value in the tree
+
+        input : value
+
+        output : True/False 
+        """
+        pass

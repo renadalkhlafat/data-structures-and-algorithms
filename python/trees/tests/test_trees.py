@@ -2,12 +2,11 @@
 Test binary tree class
 """
 from trees import __version__
-from trees.tree import BinaryTree, Node
+from trees.tree import BinaryTree, Node , BinarySearchTree
 
 
 def test_version():
     assert __version__ == '0.1.0'
-
 
 def test_bfs():
     # Arrange
