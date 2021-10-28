@@ -2,6 +2,9 @@
 This Module defines a Node and a Binary Tree
 """
 
+from os import curdir
+
+
 class Node:
   def __init__ (self,data,left=None,right=None):
     self.data = data
@@ -127,13 +130,21 @@ class BinarySearchTree(BinaryTree):
         super().__init__()
 
     def add(self,value):
-        """
-        add nodes to binary tree
-
-        input : value
-
-        output : None
-        """
+        if not self.root:
+            self.root= Node(value)
+        else :
+            temp = self.root
+            while temp:
+                if value < temp.data:
+                    if not temp.left:
+                        temp.left = Node(value)
+                        break
+                    temp = temp.left
+                else:
+                    if not temp.right:
+                        temp.right = Node(value)
+                        break
+                    temp = temp.right
         pass
 
     def __contains__(self,value):
@@ -142,6 +153,21 @@ class BinarySearchTree(BinaryTree):
 
         input : value
 
-        output : True/False 
+        output : True/False
         """
-        pass
+        if not self.root:
+            raise Exception("Empty Tree !!!")
+
+        else:
+            temp = self.root
+            while temp:
+                if temp.data == value:
+                    return True
+                elif temp.data > value:
+                    if not temp.left:
+                        return False
+                    temp = temp.left
+                else:
+                    if not temp.right:
+                        return False
+                    temp = temp.right

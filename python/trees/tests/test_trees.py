@@ -3,7 +3,7 @@ Test binary tree class
 """
 from trees import __version__
 from trees.tree import BinaryTree, Node , BinarySearchTree
-
+import pytest
 
 def test_version():
     assert __version__ == '0.1.0'
@@ -142,7 +142,7 @@ def test_add_twice():
     # set expected list
     expected = ["A","B"]
     # set actual to the tree root value
-    actual = [tree.root.data , tree.root.left.data]
+    actual = tree.pre_order()
     # assert actual is same as expected
     assert actual == expected
 
@@ -157,10 +157,26 @@ def test_contains_value():
     # set expected list
     expected = True
     # set actual to the tree root value
-    actual = tree.__contains__("C")
+    actual = tree.__contains__("B")
     # assert actual is same as expected
     assert actual == expected
 
 def test_not_contains_value():
-    pass
-""
+   # Arrange
+    # Create tree instance
+    tree = BinarySearchTree()
+    # add "A" to the tree
+    tree.add("A")
+    tree.add("B")
+    tree.add("C")
+    # set expected list
+    expected = False
+    # set actual to the tree root value
+    actual = tree.__contains__("E")
+    # assert actual is same as expected
+    assert actual == expected
+
+def test_search_in_empty_tree():
+   with pytest.raises(Exception):
+       tree = BinarySearchTree()
+       actual = tree.__contains__("O")
