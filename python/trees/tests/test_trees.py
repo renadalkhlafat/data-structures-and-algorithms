@@ -118,6 +118,22 @@ def test_in_order():
     assert actual == expected
     print("test_in_order_ passed")
 
+def test_empty_tree():
+    expected = None
+    tree = BinaryTree()
+    actual = tree.root
+
+    assert expected == actual
+
+def test_tree_with_single_node():
+    expected = "A"
+    tree = BinaryTree()
+    a_node = Node('A')
+    tree.root = a_node
+    actual = tree.root.data
+
+    assert actual == expected
+
 # ******************** binary search tree tests **********************
 def test_add_once():
      # Arrange
@@ -180,3 +196,18 @@ def test_search_in_empty_tree():
    with pytest.raises(Exception):
        tree = BinarySearchTree()
        actual = tree.__contains__("O")
+
+def test_add_left_and_right_nodes():
+    # Arrange
+    # Create tree instance
+    tree = BinarySearchTree()
+    # add "A" to the tree
+    tree.add("A")
+    tree.add("B")
+    tree.add("C")
+    # set expected list
+    expected = ["A","B","C"]
+    # set actual to the tree root value
+    actual = tree.pre_order()
+    # assert actual is same as expected
+    assert actual == expected
