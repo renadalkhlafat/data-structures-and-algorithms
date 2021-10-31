@@ -116,7 +116,30 @@ class BinaryTree:
     return list_of_items
 
   def get_max(self):
-      pass
+    """
+    Find the maximum value stored in the tree.
+
+    Arguments: none
+
+    Returns: number
+    """
+    if not self.root:
+        raise Exception("Empty Tree !!!")
+
+    # if not self.root.right and not self.root.left :
+    #     return self.root.data
+    self.max_num=self.root.data
+    def max_item(node):
+        if node.data>self.max_num:
+            self.max_num= node.data
+        if node.left:
+            max_item(node.left)
+        if node.right:
+            max_item(node.right)
+        return self.max_num
+
+    return max_item(self.root)
+
 class BinarySearchTree(BinaryTree):
     """
     class to hold adding and searching staff

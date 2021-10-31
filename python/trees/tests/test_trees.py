@@ -1,7 +1,6 @@
 """
 Test binary tree class
 """
-from python.trees.trees import tree
 from trees import __version__
 from trees.tree import BinaryTree, Node , BinarySearchTree
 import pytest
@@ -214,7 +213,8 @@ def test_add_left_and_right_nodes():
     assert actual == expected
 
 #************************** Test get-max method ***********************
-def get_max_happy_path():
+# @pytest.mark.skip("todo")
+def test_get_max_happy_path():
     #Arrange
     expected = 5
     #Act
@@ -227,8 +227,18 @@ def get_max_happy_path():
     actual = tree.get_max()
 
     assert actual == expected
-
-def get_max_from_empty_tree():
+# @pytest.mark.skip("todo")
+def test_get_max_from_empty_tree():
     with pytest.raises(Exception):
         tree = BinaryTree()
         actual = tree.get_max()
+# @pytest.mark.skip("todo")
+def test_get_max_from_tree_have_just_the_root():
+    #Arrange
+    expected = 3
+    #Act
+    tree = BinarySearchTree()
+    tree.add(3)
+    actual = tree.get_max()
+
+    assert actual == expected
