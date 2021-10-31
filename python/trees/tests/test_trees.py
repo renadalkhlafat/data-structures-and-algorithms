@@ -1,6 +1,7 @@
 """
 Test binary tree class
 """
+from python.trees.trees import tree
 from trees import __version__
 from trees.tree import BinaryTree, Node , BinarySearchTree
 import pytest
@@ -227,4 +228,7 @@ def get_max_happy_path():
 
     assert actual == expected
 
-
+def get_max_from_empty_tree():
+    with pytest.raises(Exception):
+        tree = BinaryTree()
+        actual = tree.get_max()
