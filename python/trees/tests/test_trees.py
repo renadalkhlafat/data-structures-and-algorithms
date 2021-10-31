@@ -211,3 +211,20 @@ def test_add_left_and_right_nodes():
     actual = tree.pre_order()
     # assert actual is same as expected
     assert actual == expected
+
+#************************** Test get-max method ***********************
+def get_max_happy_path():
+    #Arrange
+    expected = 5
+    #Act
+    tree = BinarySearchTree()
+    tree.add(3)
+    tree.add(1)
+    tree.add(5)
+    tree.add(2)
+
+    actual = tree.get_max()
+
+    assert actual == expected
+
+

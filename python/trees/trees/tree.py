@@ -115,6 +115,8 @@ class BinaryTree:
     walk(self.root)
     return list_of_items
 
+  def get_max(self):
+      pass
 class BinarySearchTree(BinaryTree):
     """
     class to hold adding and searching staff
