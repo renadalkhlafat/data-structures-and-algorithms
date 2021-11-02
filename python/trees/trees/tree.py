@@ -192,3 +192,40 @@ class BinarySearchTree(BinaryTree):
                     if not temp.right:
                         return False
                     temp = temp.right
+
+def fizz_buzz(node):
+
+    if not node.data % 5 and not node.data % 3 :
+        return "FizzBuzz"
+    elif not node.data % 3 :
+        return "Fizz"
+    elif not node.data % 5 :
+        return "Buzz"
+    else :
+        return str(node.data)
+
+def tree_fizz_buzz(k_tree):
+    """
+    Determine whether or not the value
+    of each node is divisible by 3, 5 or both
+    - If the value is divisible by 3, replace the value with “Fizz”
+    - If the value is divisible by 5, replace the value with “Buzz”
+    - If the value is divisible by 3 and 5,replace the value with “FizzBuzz”
+    - If the value is not divisible by 3 or 5,simply turn the number into a String
+
+    Input : K-ary tree
+    output : new k-ary tree
+    """
+    new_tree = BinaryTree()
+
+    def walk(node):
+        if node :
+            new_node = Node(fizz_buzz(node))
+            if node.left:
+                new_node.left = walk(node.left)
+            if node.right:
+                new_node.right = walk(node.right)
+            return new_node
+
+    new_tree.root = walk(k_tree.root)
+    return new_tree

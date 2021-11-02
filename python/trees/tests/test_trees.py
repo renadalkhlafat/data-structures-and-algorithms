@@ -2,7 +2,7 @@
 Test binary tree class
 """
 from trees import __version__
-from trees.tree import BinaryTree, Node , BinarySearchTree
+from trees.tree import BinaryTree, Node , BinarySearchTree,tree_fizz_buzz
 import pytest
 
 def test_version():
@@ -237,3 +237,17 @@ def test_get_max_from_tree_have_just_the_root():
     actual = tree.get_max()
 
     assert actual == expected
+
+#************************** Test tree-fizz-buzz method ***********************
+def test_fizz_buzz():
+    expected = ["2","Fizz","FizzBuzz","8","Buzz"]
+    tree = BinarySearchTree()
+    tree.add(2)
+    tree.add(3)
+    tree.add(15)
+    tree.add(8)
+    tree.add(10)
+    new_tree = tree_fizz_buzz(tree)
+    actual = new_tree.pre_order()
+    assert actual == expected
+
