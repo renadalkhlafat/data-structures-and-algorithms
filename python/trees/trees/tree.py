@@ -229,3 +229,34 @@ def tree_fizz_buzz(k_tree):
 
     new_tree.root = walk(k_tree.root)
     return new_tree
+
+
+def find_odd_sum(bTree):
+  """
+    find the sum of the odd numbers
+
+    input : binary tree
+    return : number
+  """
+  sum = 0
+
+  def walk(node):
+    nonlocal sum
+    if node.data.isdigit() and node.data % 2 :
+        sum += node.data
+    if node.left :
+      walk(node.left)
+    if node.right:
+        walk(node.right)
+  walk (bTree.root)
+  return sum
+
+if __name__ == "__main__":
+    tree = BinarySearchTree()
+    tree.add(2)
+    tree.add(3)
+    tree.add(15)
+    tree.add(7)
+    tree.add(10)
+
+print(find_odd_sum(tree))
