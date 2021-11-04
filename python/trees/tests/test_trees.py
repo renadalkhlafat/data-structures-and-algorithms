@@ -8,7 +8,7 @@ import pytest
 def test_version():
     assert __version__ == '0.1.0'
 
-def test_bfs():
+def test_breadth_first():
     # Arrange
     # Create tree instance
     tree = BinaryTree()
@@ -25,12 +25,11 @@ def test_bfs():
     # set expected list
     expected = ["A", "B", "C", "D"]
     # set actual to return value of bfs call
-    actual = tree.bfs()
+    actual = tree.breadth_first()
     # assert actual is same as expected
     assert actual == expected
-    print("test_bfs passed")
 
-def test_bfs_2():
+def test_breadth_first_2():
     # Arrange
     # Create tree instance
     tree = BinaryTree()
@@ -47,10 +46,9 @@ def test_bfs_2():
     # set expected list
     expected = ["1", "2", "3", "4"]
     # set actual to return value of bfs call
-    actual = tree.bfs()
+    actual = tree.breadth_first()
     # assert actual is same as expected
     assert actual == expected
-    print("test_bfs_2 passed")
 
 def test_pre_order():
     # Arrange
@@ -72,7 +70,6 @@ def test_pre_order():
     actual = tree.pre_order()
     # assert actual is same as expected
     assert actual == expected
-    print("test_pre_order_ passed")
 
 def test_post_order():
     # Arrange
@@ -94,7 +91,6 @@ def test_post_order():
     actual = tree.post_order()
     # assert actual is same as expected
     assert actual == expected
-    print("test_post_order_ passed")
 
 def test_in_order():
     # Arrange
@@ -116,7 +112,6 @@ def test_in_order():
     actual = tree.in_order()
     # assert actual is same as expected
     assert actual == expected
-    print("test_in_order_ passed")
 
 def test_empty_tree():
     expected = None

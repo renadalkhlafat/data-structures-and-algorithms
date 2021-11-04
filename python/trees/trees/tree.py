@@ -28,7 +28,7 @@ class BinaryTree:
   def __init__(self):
     self.root = None
 
-  def bfs(self):
+  def breadth_first(self):
     """
     A binary tree method which returns a list of items that it contains
 
