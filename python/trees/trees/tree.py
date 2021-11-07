@@ -8,6 +8,10 @@ class Node:
     self.left = left
     self.right = right
 
+class Node_:
+  def __init__ (self,data):
+    self.data = data
+    self.child = []
 class Queue:
   def __init__(self, collection=[]):
     self.data = collection
@@ -216,19 +220,17 @@ def tree_fizz_buzz(k_tree):
     Input : K-ary tree
     output : new k-ary tree
     """
-    new_tree = BinaryTree()
+    queue = Queue()
+    queue.enqueue(k_tree.root)
 
-    def walk(node):
-        if node :
-            new_node = Node(fizz_buzz(node))
-            if node.left:
-                new_node.left = walk(node.left)
-            if node.right:
-                new_node.right = walk(node.right)
-            return new_node
+    while queue.peek():
+      front = queue.dequeue()
+      front.data = fizz_buzz(front)
 
-    new_tree.root = walk(k_tree.root)
-    return new_tree
+      for child in front.child:
+        queue.enqueue(child)
+
+    return k_tree
 
 
 def find_odd_sum(bTree):
@@ -251,6 +253,23 @@ def find_odd_sum(bTree):
   walk (bTree.root)
   return sum
 
+def k_ary_bfs(tree):
+        """
+        A binary tree method which returns a list of items that it contains
+        input: None
+        output: tree items
+        """
+        breadth = Queue()
+        breadth.enqueue(tree.root)
+
+        list_of_items = []
+        while breadth.peek():
+            front = breadth.dequeue()
+            list_of_items += [front.data]
+            if front.child:
+                for item in front.child:
+                    breadth.enqueue(item)
+        return list_of_items
 if __name__ == "__main__":
     tree = BinarySearchTree()
     tree.add(2)
@@ -259,4 +278,4 @@ if __name__ == "__main__":
     tree.add(7)
     tree.add(10)
 
-print(find_odd_sum(tree))
+# print(find_odd_sum(tree))

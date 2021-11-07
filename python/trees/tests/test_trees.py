@@ -2,7 +2,7 @@
 Test binary tree class
 """
 from trees import __version__
-from trees.tree import BinaryTree, Node , BinarySearchTree,tree_fizz_buzz
+from trees.tree import BinaryTree, Node,Node_ ,k_ary_bfs, BinarySearchTree,tree_fizz_buzz
 import pytest
 
 def test_version():
@@ -240,14 +240,25 @@ def test_get_max_from_tree_have_just_the_root():
 
 #************************** Test tree-fizz-buzz method ***********************
 def test_fizz_buzz():
-    expected = ["2","Fizz","FizzBuzz","8","Buzz"]
-    tree = BinarySearchTree()
-    tree.add(2)
-    tree.add(3)
-    tree.add(15)
-    tree.add(8)
-    tree.add(10)
+    expected = ['2', 'Fizz', 'FizzBuzz', 'Buzz', '1', 'Fizz', '22']
+    tree = BinaryTree
+    a_node = Node_(2)
+    b_node = Node_(3)
+    c_node = Node_(15)
+    d_node = Node_(85)
+    e_node = Node_(1)
+    f_node = Node_(33)
+    g_node = Node_(22)
+    a_node.child.append( b_node)
+    a_node.child.append( c_node)
+    a_node.child.append( d_node)
+    b_node.child.append( e_node)
+    b_node.child.append( f_node)
+    c_node.child.append( g_node)
+    # Add Root node to tree
+    tree.root = a_node
     new_tree = tree_fizz_buzz(tree)
-    actual = new_tree.pre_order()
+    print( k_ary_bfs(new_tree))
+    actual = k_ary_bfs(new_tree)
     assert actual == expected
 
