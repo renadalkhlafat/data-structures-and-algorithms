@@ -75,7 +75,7 @@ Determine whether or not the value of each node is divisible by 3, 5 or both. Cr
 - If the value is not divisible by 3 or 5, simply turn the number into a String
 
 ## Whiteboard Process
-![tree_fizz_buzz](tree_fizz_buzz.png)
+![tree_fizz_buzz](k-ary-tree-fizzbuzz.png)
 
 ## Approach & Efficiency
 I use helper function inside the  method to do the recaerssion staff and fill the new tree with `Fizz` or `Buzz` or both
