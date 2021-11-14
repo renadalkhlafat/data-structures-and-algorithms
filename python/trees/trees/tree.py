@@ -8,6 +8,10 @@ class Node:
     self.left = left
     self.right = right
 
+class Node_:
+  def __init__ (self,data):
+    self.data = data
+    self.child = []
 class Queue:
   def __init__(self, collection=[]):
     self.data = collection
@@ -192,3 +196,86 @@ class BinarySearchTree(BinaryTree):
                     if not temp.right:
                         return False
                     temp = temp.right
+
+def fizz_buzz(node):
+
+    if not node.data % 5 and not node.data % 3 :
+        return "FizzBuzz"
+    elif not node.data % 3 :
+        return "Fizz"
+    elif not node.data % 5 :
+        return "Buzz"
+    else :
+        return str(node.data)
+
+def tree_fizz_buzz(k_tree):
+    """
+    Determine whether or not the value
+    of each node is divisible by 3, 5 or both
+    - If the value is divisible by 3, replace the value with “Fizz”
+    - If the value is divisible by 5, replace the value with “Buzz”
+    - If the value is divisible by 3 and 5,replace the value with “FizzBuzz”
+    - If the value is not divisible by 3 or 5,simply turn the number into a String
+
+    Input : K-ary tree
+    output : new k-ary tree
+    """
+    queue = Queue()
+    queue.enqueue(k_tree.root)
+
+    while queue.peek():
+      front = queue.dequeue()
+      front.data = fizz_buzz(front)
+
+      for child in front.child:
+        queue.enqueue(child)
+
+    return k_tree
+
+
+def find_odd_sum(bTree):
+  """
+    find the sum of the odd numbers
+
+    input : binary tree
+    return : number
+  """
+  sum = 0
+
+  def walk(node):
+    nonlocal sum
+    if node.data.isdigit() and node.data % 2 :
+        sum += node.data
+    if node.left :
+      walk(node.left)
+    if node.right:
+        walk(node.right)
+  walk (bTree.root)
+  return sum
+
+def k_ary_bfs(tree):
+        """
+        A binary tree method which returns a list of items that it contains
+        input: None
+        output: tree items
+        """
+        breadth = Queue()
+        breadth.enqueue(tree.root)
+
+        list_of_items = []
+        while breadth.peek():
+            front = breadth.dequeue()
+            list_of_items += [front.data]
+            if front.child:
+                for item in front.child:
+                    breadth.enqueue(item)
+        return list_of_items
+if __name__ == "__main__":
+    tree = BinarySearchTree()
+    tree.add(2)
+    tree.add(3)
+    tree.add(15)
+    tree.add(7)
+    tree.add(10)
+
+# print(find_odd_sum(tree))
