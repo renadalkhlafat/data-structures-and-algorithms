@@ -5,7 +5,7 @@ Insertion sort is a simple sorting algorithm that works similar to the way you s
 ![insertion-sort](insertion-sort-wh.png)
 # Trace
 **Example :** [20,18,22,5,-2]
-![insertion-sort](insertion-sort.png)
+![blog](blog.png)
 
 # Test (python) :
 ```python
