@@ -26,4 +26,9 @@ To run your tests
 | 2  | [array-insert-shift](./python/code_challenges/array-insert-shift/README.md)|
 | 3  | [array-binary-search](./python/code_challenges/array-binary-search/README.md)|
 | 4  | [Linked List ](./python/linked_list/README.md)|
-
+| 5  | [Stacks and Queues ](./python/stack_and_queue/README.md)|
+| 6  | [Stacks and Queues pesudo ](./python/stack_and_queue/README1.md)|
+| 7  | [Stacks and Queues animal shelter ](./python/stack_and_queue/README2.md)|
+| 8  | [Stacks and Queues brackets ](./python/stack_and_queue/README2.md)|
+| 9  | [Trees](./python/trees/README.md)|
+| 10  | [Insertion sort](./python/insertion-sort/README.md)|
