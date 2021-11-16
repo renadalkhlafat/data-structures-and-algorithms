@@ -32,3 +32,5 @@ To run your tests
 | 8  | [Stacks and Queues brackets ](./python/stack_and_queue/README2.md)|
 | 9  | [Trees](./python/trees/README.md)|
 | 10  | [Insertion sort](./python/insertion-sort/README.md)|
+| 11  | [Merge sort](./python/merge_sort/README.md)|
+| 12  | [Quick sort](./python/quick_sort/README.md)|
