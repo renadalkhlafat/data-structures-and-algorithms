@@ -29,3 +29,11 @@ def test_add_to_hash_table(hashtable):
     hashtable.add("renad","23")
     actual = hashtable.get("renad")
     assert actual == expected
+
+def test_retrieving_from_hash_table_based_on_key(hashtable):
+    expected = "age"
+    hashtable.add("person","age")
+    actual = hashtable.get("person")
+    assert actual == expected
+
+
