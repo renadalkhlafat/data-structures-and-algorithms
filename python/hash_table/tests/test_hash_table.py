@@ -41,4 +41,10 @@ def test_retrieving_null_from_hash_table_based_on_non_exist_key(hashtable):
     actual = hashtable.get("something")
     assert actual == expected
 
+def test_handle_collision_on_hash_table(hashtable):
+    expected = "30"
+    hashtable.add("renad","23")
+    hashtable.add("renad","30")
+    actual = hashtable.get("renad")
+    assert actual == expected
 
