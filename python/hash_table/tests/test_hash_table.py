@@ -48,3 +48,10 @@ def test_handle_collision_on_hash_table(hashtable):
     actual = hashtable.get("renad")
     assert actual == expected
 
+def test_retrieving_value_within_collision_on_hash_table(hashtable):
+    expected = "30"
+    hashtable.add("renad","23")
+    hashtable.add("renad","30")
+    actual = hashtable.get("renad")
+    assert actual == expected
+
