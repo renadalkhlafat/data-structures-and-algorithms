@@ -36,4 +36,9 @@ def test_retrieving_from_hash_table_based_on_key(hashtable):
     actual = hashtable.get("person")
     assert actual == expected
 
+def test_retrieving_null_from_hash_table_based_on_non_exist_key(hashtable):
+    expected = None
+    actual = hashtable.get("something")
+    assert actual == expected
+
 
