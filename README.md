@@ -34,3 +34,4 @@ To run your tests
 | 10  | [Insertion sort](./python/insertion-sort/README.md)|
 | 11  | [Merge sort](./python/merge_sort/README.md)|
 | 12  | [Quick sort](./python/quick_sort/README.md)|
+| 13  | [Hash Table](./python/hash_table/README.md)|
