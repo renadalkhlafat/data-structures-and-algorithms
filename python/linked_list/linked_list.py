@@ -235,6 +235,7 @@ def ispalindrome(linkedL):
         temp=temp.next
 
     temp = linkedL.head
+
     while temp :
         x = arr.pop()
 

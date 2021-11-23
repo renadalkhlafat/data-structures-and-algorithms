@@ -78,8 +78,7 @@ class HashTable:
             return current.value[1]
           current = current.next
 
-      # return None
-      return None
+      raise KeyError("not found ")
 
     def contains(self, key):
         """
