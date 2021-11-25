@@ -1,4 +1,4 @@
-from hash_table import HashTable
+from hash_table.hash_table import HashTable
 
 
 def left_join(first_hashmap:HashTable, second_hashmap:HashTable):
