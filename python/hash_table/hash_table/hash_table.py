@@ -99,7 +99,7 @@ class HashTable:
                 if current.value[0] == key:
                 # return True
                     return True
-                    current = current.next
+                current = current.next
 
         # return False
         return False
