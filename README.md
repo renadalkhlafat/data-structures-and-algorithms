@@ -40,4 +40,5 @@ To run your tests
 | 16  | [Hash Table -list join](./python/hash_table/README3.md)|
 | 17  | [Graph ](./python/graph/README.md)|
 | 18  | [Graph - BFS ](./python/graph/README1.md)|
-| 18  | [Graph - business Trip ](./python/graph/README3.md)|
+| 19  | [Graph - business Trip ](./python/graph/README2.md)|
+| 20  | [Graph - DFS ](./python/graph/README3.md)|
