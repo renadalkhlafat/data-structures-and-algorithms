@@ -135,6 +135,20 @@ class Graph:
 
         return final_result
 
+    def depth_first(self ,start_vertex):
+        list_of_items = []
+        list_of_items.append(start_vertex.value)
+
+        def walk(vertex):
+            edge =self.__adjacency_list[vertex]
+            for v in edge:
+                my_vertex = v.vertex.value
+                if my_vertex not in list_of_items:
+                    list_of_items.append(my_vertex)
+                    walk(v.vertex)
+        walk(start_vertex)
+        return list_of_items
+
 def business_trip(graph ,city_list):
     cost = 0
     def walk(city_list):
@@ -158,60 +172,58 @@ def business_trip(graph ,city_list):
 
 
 
+# graph = Graph()
+
+# pandora = graph.add_node('Pandora')
+# arendelle = graph.add_node('Arendelle')
+# metroville = graph.add_node('Metroville')
+# monstropolis = graph.add_node('Monstropolis')
+# naboo = graph.add_node('Naboo')
+# narnia = graph.add_node('Narnia')
+
+# graph.add_edge(pandora,arendelle,150)
+# graph.add_edge(arendelle,pandora,150)
+# graph.add_edge(pandora,metroville,82)
+# graph.add_edge(metroville,pandora,82)
+
+# graph.add_edge(arendelle,metroville,99)
+# graph.add_edge(metroville,arendelle,99)
+# graph.add_edge(arendelle,monstropolis,42)
+# graph.add_edge(monstropolis,arendelle,42)
+
+# graph.add_edge(monstropolis,metroville,105)
+# graph.add_edge(metroville,monstropolis,105)
+# graph.add_edge(monstropolis,naboo,73)
+# graph.add_edge(naboo,monstropolis,73)
+
+# graph.add_edge(metroville,naboo,26)
+# graph.add_edge(naboo,metroville,26)
+# graph.add_edge(metroville,narnia,37)
+# graph.add_edge(narnia,metroville,37)
+
+# graph.add_edge(naboo,narnia,250)
+# graph.add_edge(narnia,naboo,250)
+
+
+
+# actual = business_trip(graph,[arendelle,monstropolis,naboo])
+
+# print(actual)
+
+
+
+
 
 graph = Graph()
 
-pandora = graph.add_node('Pandora')
-arendelle = graph.add_node('Arendelle')
-metroville = graph.add_node('Metroville')
-monstropolis = graph.add_node('Monstropolis')
-naboo = graph.add_node('Naboo')
-narnia = graph.add_node('Narnia')
+apple = graph.add_node('apple')
+cherry = graph.add_node('cherry')
+orange = graph.add_node('orange')
+banana = graph.add_node('banana')
 
-graph.add_edge(pandora,arendelle,150)
-graph.add_edge(arendelle,pandora,150)
-graph.add_edge(pandora,metroville,82)
-graph.add_edge(metroville,pandora,82)
+graph.add_edge(apple,banana)
+graph.add_edge(orange,banana)
+graph.add_edge(cherry,orange)
+graph.add_edge(banana,cherry)
 
-graph.add_edge(arendelle,metroville,99)
-graph.add_edge(metroville,arendelle,99)
-graph.add_edge(arendelle,monstropolis,42)
-graph.add_edge(monstropolis,arendelle,42)
-
-graph.add_edge(monstropolis,metroville,105)
-graph.add_edge(metroville,monstropolis,105)
-graph.add_edge(monstropolis,naboo,73)
-graph.add_edge(naboo,monstropolis,73)
-
-graph.add_edge(metroville,naboo,26)
-graph.add_edge(naboo,metroville,26)
-graph.add_edge(metroville,narnia,37)
-graph.add_edge(narnia,metroville,37)
-
-graph.add_edge(naboo,narnia,250)
-graph.add_edge(narnia,naboo,250)
-
-
-
-actual = business_trip(graph,[arendelle,monstropolis, naboo])
-
-print(actual)
-
-
-
-
-
-
-# graph = Graph()
-
-# apple = graph.add_node('apple')
-# cherry = graph.add_node('cherry')
-# orange = graph.add_node('orange')
-# banana = graph.add_node('banana')
-
-# graph.add_edge(apple,banana)
-# graph.add_edge(orange,banana)
-# graph.add_edge(cherry,orange)
-# graph.add_edge(banana,cherry)
-
-# print(graph.breadth_first(apple))
+print(graph.depth_first(apple))
