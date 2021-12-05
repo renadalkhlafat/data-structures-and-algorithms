@@ -152,29 +152,22 @@ class Graph:
 def business_trip(graph ,city_list):
     cost = 0
     def walk(city_list):
-      nonlocal cost
-      first_city = city_list[0]
-      city_list.pop(0)
-      for city in graph._Graph__adjacency_list:
-        if city.value == first_city:
-          first_city = city
-          break
-
+        nonlocal cost
+        first_city = city_list.pop(0)
         cities = graph.get_neighbors(first_city)
-        city_names = [city.vertex.value for city in cities]
+        v = [city.vertex for city in cities]
         for city in cities:
-
-            if city_names[0] == city_list[0].value:
-                print(city_names[0],city_list[0].value)
-                print("here")
+            if city_list[0] not in v:
+                return [False , "$0"]
+            if city.vertex in city_list:
+                print(city.weight)
                 cost += city.weight
                 if len(city_list)>1 :
                     walk(city_list)
     walk(city_list)
-    result = [True , f"${cost}"]
     if not cost:
         return [False , "$0"]
-    return result
+    return [True , f"${cost}"]
 
 
 

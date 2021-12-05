@@ -147,9 +147,9 @@ def test_business_trip():
     graph.add_edge(narnia,naboo,250)
 
     assert [True, "$82"] == business_trip(graph,[metroville, pandora])
-    assert [True, '$42'] == business_trip(graph,[arendelle,monstropolis, naboo])
+    assert [True, '$115'] == business_trip(graph,[arendelle,monstropolis, naboo])
     assert [False, "$0"] == business_trip(graph,[naboo, pandora])
-    assert [True, '$250'] == business_trip(graph,[narnia, arendelle,naboo])
+    assert [False, '$0'] == business_trip(graph,[narnia, arendelle,naboo])
 
 # *************************** depth_first ***********************
 def test_breadth_first():
