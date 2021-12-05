@@ -92,3 +92,21 @@ def test_get_neighbors():
     assert neighbor_edge.vertex.value == 'banana'
 
     assert neighbor_edge.weight == 44
+
+def test_breadth_first():
+    graph = Graph()
+
+    apple = graph.add_node('apple')
+    cherry = graph.add_node('cherry')
+    orange = graph.add_node('orange')
+    banana = graph.add_node('banana')
+
+    graph.add_edge(apple,banana)
+    graph.add_edge(orange,banana)
+    graph.add_edge(cherry,orange)
+    graph.add_edge(banana,cherry)
+
+    expected = 'apple ,banana ,cherry ,orange ,'
+    actual = graph.breadth_first(apple)
+    assert actual == expected
+    
